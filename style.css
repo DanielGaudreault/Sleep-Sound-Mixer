@@ -1,0 +1,209 @@
+:root {
+    --primary-color: #6d28d9;
+    --secondary-color: #8b5cf6;
+    --background-color: #f5f3ff;
+    --text-color: #1e293b;
+    --card-color: #ffffff;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --border-radius: 8px;
+}
+
+.dark-mode {
+    --primary-color: #8b5cf6;
+    --secondary-color: #a78bfa;
+    --background-color: #1e293b;
+    --text-color: #f8fafc;
+    --card-color: #334155;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.app-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.app-header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.app-header h1 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.app-header p {
+    font-size: 1.1rem;
+    color: var(--secondary-color);
+}
+
+.main-content {
+    flex: 1;
+}
+
+.soundboard-section, .presets-section, .timer-section {
+    background-color: var(--card-color);
+    border-radius: var(--border-radius);
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: var(--shadow);
+}
+
+h2 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.sound-controls {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.sound-card {
+    background-color: var(--background-color);
+    padding: 15px;
+    border-radius: var(--border-radius);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.sound-name {
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.sound-icon {
+    color: var(--primary-color);
+}
+
+.volume-control {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.volume-control label {
+    font-size: 0.9rem;
+}
+
+.master-controls {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.control-btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.2s;
+}
+
+.control-btn:hover {
+    background-color: var(--secondary-color);
+}
+
+.preset-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.preset-btn {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    border: 1px solid var(--primary-color);
+    padding: 10px 15px;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s;
+}
+
+.preset-btn:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.timer-controls {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+select {
+    padding: 8px 12px;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--primary-color);
+    background-color: var(--card-color);
+    color: var(--text-color);
+}
+
+.app-footer {
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 30px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+#darkModeToggle {
+    color: var(--primary-color);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .sound-controls {
+        grid-template-columns: 1fr;
+    }
+    
+    .preset-buttons, .master-controls, .timer-controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .control-btn, .preset-btn {
+        justify-content: center;
+    }
+}
