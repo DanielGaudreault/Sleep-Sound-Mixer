@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DreamScape - Sleep Sound Mixer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <h1><i class="fas fa-moon"></i> DreamScape</h1>
+            <p>Mix your perfect sleep environment</p>
+        </header>
+
+        <div class="main-content">
+            <div class="soundboard-section">
+                <h2><i class="fas fa-sliders-h"></i> Sound Mixer</h2>
+                
+                <div class="sound-controls">
+                    <!-- Sound controls will be added dynamically by JavaScript -->
+                </div>
+                
+                <div class="master-controls">
+                    <button id="playAllBtn" class="control-btn">
+                        <i class="fas fa-play"></i> Play All
+                    </button>
+                    <button id="stopAllBtn" class="control-btn">
+                        <i class="fas fa-stop"></i> Stop All
+                    </button>
+                    <div class="volume-control">
+                        <label for="masterVolume">Master Volume:</label>
+                        <input type="range" id="masterVolume" min="0" max="1" step="0.01" value="0.5">
+                    </div>
+                </div>
+            </div>
+
+            <div class="presets-section">
+                <h2><i class="fas fa-star"></i> Preset Soundscapes</h2>
+                <div class="preset-buttons">
+                    <button class="preset-btn" data-preset="deepSleep">
+                        <i class="fas fa-bed"></i> Deep Sleep
+                    </button>
+                    <button class="preset-btn" data-preset="focusFlow">
+                        <i class="fas fa-brain"></i> Focus Flow
+                    </button>
+                    <button class="preset-btn" data-preset="meditation">
+                        <i class="fas fa-spa"></i> Meditation
+                    </button>
+                </div>
+            </div>
+
+            <div class="timer-section">
+                <h2><i class="fas fa-clock"></i> Sleep Timer</h2>
+                <div class="timer-controls">
+                    <select id="timerSelect">
+                        <option value="0">Off</option>
+                        <option value="15">15 minutes</option>
+                        <option value="30">30 minutes</option>
+                        <option value="45">45 minutes</option>
+                        <option value="60">1 hour</option>
+                        <option value="120">2 hours</option>
+                    </select>
+                    <button id="startTimerBtn" class="control-btn">
+                        <i class="fas fa-hourglass-start"></i> Start Timer
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <footer class="app-footer">
+            <p>© 2023 DreamScape | <a href="#" id="darkModeToggle">Dark Mode</a></p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
